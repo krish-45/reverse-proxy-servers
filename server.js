@@ -11,6 +11,10 @@ app.get('/health-check', (req, res) => {
   res.json({ message: `Health Check 1: ${port}!` });
 });
 
+app.get('*', (req, res) => {
+  res.json({ message: `* Executed: ${port}!` });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
