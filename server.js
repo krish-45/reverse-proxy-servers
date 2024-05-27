@@ -7,6 +7,10 @@ app.get('/api/v1/hello', (req, res) => {
   res.json({ message: `Hi, This is Server 1: ${port}!` });
 });
 
+app.get('/health-check', (req, res) => {
+  res.json({ message: `Health Check 1: ${port}!` });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
